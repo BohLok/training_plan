@@ -1,0 +1,11 @@
+<h1>TPlan#show</h1>
+<p>Find me in app/views/t_plan/show.html.erb</p>
+
+
+<%= month_calendar do |date| %>
+  <% if (training = @trainings.detect {|t| t.t_date == date}) %>
+    <%= training.title %>
+  <% else %>
+    <%= date %>
+  <% end %>
+<% end %>
