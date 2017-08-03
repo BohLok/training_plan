@@ -1,5 +1,6 @@
 class TPlanController < ApplicationController
+ before_action :authenticate_user!
   def show
-    @trainings = Training.all
+    @trainings = current_user.trainings
   end
 end
