@@ -4,7 +4,7 @@
 
 <%= month_calendar do |date| %>
   <% if (training = @trainings.detect {|t| t.t_date == date}) %>
-    <%= training.title %>
+    <%= link_to(training.title, training_path(training)) %>
   <% else %>
     <%= date %>
   <% end %>

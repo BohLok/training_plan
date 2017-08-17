@@ -1,0 +1,2 @@
+module TraingHelper
+end
