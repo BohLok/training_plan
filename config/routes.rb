@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  resources :training
+  # resources :training
 
   devise_for :users
-  get 't_plan/show'
+
+  resources :users do
+    resources :training
+    get 't_plan/show'
+  end
+
+  
 
   root to: "t_plan#show"
 
