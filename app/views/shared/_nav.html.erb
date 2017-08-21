@@ -1,0 +1,23 @@
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  
+
+ <!--  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> -->
+  <a><%= link_to "Traininplan", root_path, class: "navbar-brand" %></a>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a><%= link_to "Home", root_path, class: "nav-item nav-link" %></a>
+      <% if current_user %>
+        <a><%= link_to "Log out", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?'}, class: "nav-item nav-link" %></a>
+      <% else %>
+        <a><%= link_to "Register", new_user_registration_path, class: "nav-item nav-link" %></a>
+        <a><%= link_to "Log in", new_user_session_path, class: "nav-item nav-link" %></a>
+      <% end %>
+    </div>
+  </div>
+
+
+
+
+</nav>

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get 'homepage/index'
+
   # resources :training
 
-  devise_for :users
+  devise_for :users, :path => 'accounts'
 
   resources :users do
     resources :training
@@ -9,8 +11,8 @@ Rails.application.routes.draw do
   end
 
   
-
-  root to: "t_plan#show"
+  get 'homepage/index' => "homepage#index", :as => 'index'
+  root to: "homepage#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
