@@ -1,23 +1,23 @@
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-  
-
- <!--  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button> -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
   <a><%= link_to "Traininplan", root_path, class: "navbar-brand" %></a>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a><%= link_to "Home", root_path, class: "nav-item nav-link" %></a>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a><%= link_to "Home", root_path, class: "nav-link" %> <span class="sr-only">(current)</span></a>
+      </li>
       <% if current_user %>
-        <a><%= link_to "Log out", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?'}, class: "nav-item nav-link" %></a>
+        <li class="nav-item">
+          <a><%= link_to "Log out", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?'}, class: "nav-link" %></a>
+        </li>
       <% else %>
-        <a><%= link_to "Register", new_user_registration_path, class: "nav-item nav-link" %></a>
-        <a><%= link_to "Log in", new_user_session_path, class: "nav-item nav-link" %></a>
+        <li class="nav-item">
+          <a><%= link_to "Register", new_user_registration_path, class: "nav-link" %></a>
+        </li>
+        <li class="nav-item">
+          <a><%= link_to "Log in", new_user_session_path, class: "nav-link" %></a>
+        </li>
       <% end %>
-    </div>
+    </ul>
   </div>
-
-
-
-
 </nav>
+
