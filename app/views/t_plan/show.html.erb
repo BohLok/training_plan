@@ -2,16 +2,22 @@
 <p>Find me in app/views/t_plan/show.html.erb</p>
 
 
-<%= month_calendar do |date| %>
-  <% if (training = @trainings.detect {|t| t.t_date == date}) %>
-    <%= link_to(training.title, user_training_path(current_user, training)) %>
-  <% else %>
-    <%= date %>
-  <% end %>
-<% end %>
 
-<div class="card card-body">
-<h4 class="card-title">Boot Polish</h4>
-<p class="card-text">Boot polish is a waxy paste, cream, or liquid used to polish, shine, and waterproof leather shoes or boots to extend the footwear's life, and restore, maintain and improve their appearance.</p>
-<a href="#" class="btn btn-primary">More</a>
+
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Trainingsplan</h4>
+    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+    <p class="card-text">
+      <%= month_calendar do |date| %>
+        <% if (training = @trainings.detect {|t| t.t_date == date}) %>
+          <%= link_to(training.title, user_training_path(current_user, training)) %>
+        <% else %>
+          <%= date %>
+        <% end %>
+      <% end %>
+    </p>
+    <!-- <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a> -->
+  </div>
 </div>

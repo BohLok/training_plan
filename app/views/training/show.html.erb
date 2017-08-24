@@ -1,25 +1,14 @@
-<h3>Training Details: </h3>
 
 <div class="card custom-card">
-  <div class="card-block">
-    <p class="card-text">Date: <%= @training.t_date %></p>
+  <div class="card-body">
     <h4 class="card-title">Title: <%= @training.title %></h4>
+    <h6 class="card-subtitle mb-2 text-muted">Date: <%= @training.t_date %></h6>
     <p class="card-text">Training: <%= @training.body %></p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Länge: <%= @training.length %> km</li>
-    <li class="list-group-item">Schwierigkeit: <%= @training.difficulty %> / 10</li>
-  </ul>
-  <div class="card-block">
-    <%= link_to "Back to overview", user_t_plan_show_path(user_id: current_user.id, start_date: @training.t_date), class: "btn btn-default" %>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Länge: <%= @training.length %> km</li>
+      <li class="list-group-item">Schwierigkeit: <%= @training.difficulty %> / 10</li>
+    </ul>
+    <a><%= link_to "Back to overview", user_t_plan_show_path(user_id: current_user.id, start_date: @training.t_date), class: "card-link" %></a>
   </div>
 </div>
 
-<div class="card card-outline-primary mb-3 text-center">
-  <div class="card-block">
-    <blockquote class="card-blockquote">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-    </blockquote>
-  </div>
-</div>
