@@ -11,8 +11,9 @@
 
   <body>
      <div class="container main-container">
-        <div class="col align-self-center">
+      <div class="col align-self-center">
         <%= render "/shared/nav" %>
+        <%= flash_messages %>
         <%= yield %>
       </div>
     </div>
