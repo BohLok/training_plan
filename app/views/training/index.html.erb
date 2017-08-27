@@ -1,10 +1,18 @@
-training#index
-<% @trainings.each do |t| %>
-  <a><%= t.t_date %></a>
-  <a><%= link_to t.title, user_training_path(current_user, t), class: "card-link" %></a>
-  <p>....</p>
-<% end %>
+<div class="card">
+  <h3 class="card-header">Training List:</h3>
+  <div class="card-block">
+    <% @trainings.each do |t| %>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <span class="badge badge-primary"><%= t.t_date %></span>
+          <%= link_to t.title, user_training_path(current_user, t), class: "card-link" %>
+          
+        </li>
+      </ul>
 
-
- <%= paginate @trainings %>
- <a><%= link_to "Training Calender", user_t_plan_show_path(user_id: current_user.id), class: "card-link" %></a>
+    <% end %>
+  </div>
+</div>
+</br>
+<%= paginate @trainings %>
+<div><%= link_to "Training Calender", user_t_plan_show_path(user_id: current_user.id), class: "btn btn-primary" %></div>
