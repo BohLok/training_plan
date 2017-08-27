@@ -1,1 +1,10 @@
 training#index
+<% @trainings.each do |t| %>
+  <a><%= t.t_date %></a>
+  <a><%= link_to t.title, user_training_path(current_user, t), class: "card-link" %></a>
+  <p>....</p>
+<% end %>
+
+
+ <%= paginate @trainings %>
+ <a><%= link_to "Training Calender", user_t_plan_show_path(user_id: current_user.id), class: "card-link" %></a>

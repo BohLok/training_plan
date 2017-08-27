@@ -3,7 +3,7 @@ before_action :authenticate_user!
 # before_action :set_training
 
 def index
-  @trainings = current_user.trainings
+  @trainings = current_user.trainings.order(:t_date).page params[:page]
 end
 
 def show

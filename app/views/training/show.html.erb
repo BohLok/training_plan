@@ -8,7 +8,8 @@
       <li class="list-group-item">Länge: <%= @training.length %> km</li>
       <li class="list-group-item">Schwierigkeit: <%= @training.difficulty %> / 10</li>
     </ul>
-    <a><%= link_to "Back to overview", user_t_plan_show_path(user_id: current_user.id, start_date: @training.t_date), class: "card-link" %></a>
+    <a><%= link_to "Show training list", user_training_index_path(user_id: current_user.id, start_date: @training.t_date), class: "card-link" %></a>
+    <a><%= link_to "Training Calender", user_t_plan_show_path(user_id: current_user.id, start_date: @training.t_date), class: "card-link" %></a>
   </div>
 </div>
 
