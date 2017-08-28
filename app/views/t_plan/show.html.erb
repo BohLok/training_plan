@@ -5,7 +5,7 @@
     <p class="card-text">
       <%= month_calendar do |date| %>
         <% if (training = @trainings.detect {|t| t.t_date == date}) %>
-          <%= link_to(training.title, user_training_path(current_user, training)) %>
+          <%= link_to(training.title, user_training_path(current_user, training), class: page-link) %>
         <% else %>
           <%= date %>
         <% end %>

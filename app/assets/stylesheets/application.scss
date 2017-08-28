@@ -2,20 +2,27 @@
 @import "bootstrap";
 
 .custom-card {
-
-
-
   /*background-color: #333; */
   border-color: #333;
-  width: 20rem;
+  width: 500px;
 
 }
 
 .main-container {
- /* width: 940px;*/
+  width: 940px;
 }
 
 .img_header {
   display: block;
   margin: auto;
+  margin-bottom: 2rem;
+}
+
+.bottom-nav {
+  margin-top: 1rem;
+}
+
+.calendar-custom {
+  float: left;
+  width: 220px;
 }
