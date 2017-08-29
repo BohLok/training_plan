@@ -12,6 +12,9 @@ end
 
 
 def new
+  if !current_user.admin? then
+    redirect_to root_path, alert: "Only for accessible for Admin!"
+  end
 end
 
 def create
@@ -19,6 +22,9 @@ end
 
 
 def edit 
+  if !current_user.admin? then
+    redirect_to root_path, alert: "Only for accessible for Admin!"
+  end
 end
 
 def update
