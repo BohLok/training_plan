@@ -1,7 +1,17 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
-
-<% @users.each do |u| %>
-  <%= u.email %>
-  <br/>
-<% end %>
+<div class="card main-container">
+  <h3 class="card-header">Training List:</h3>
+  <div class="card-block">
+    <% @users.each do |u| %>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <%= link_to u.email, user_path(u), class: "card-link" %>
+          <span class="badge badge-secondary"><%= link_to "show", user_path(u), class: "custom-link"  %></span>
+          <span class="badge badge-warning"><%= link_to "edit", edit_user_path(u), class: "custom-link"  %></span>
+          <% unless u == current_user %>
+            <span class="badge badge-danger"><%= link_to "delete", user_path(u), method: :delete, class: "custom-link"  %></span>
+          <% end %>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+</div>
