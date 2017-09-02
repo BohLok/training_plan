@@ -1,5 +1,7 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-
-<p>Email: </p>
-<%= @user.email %>
+<div class="card">
+  <div class="card-block custom-card">
+    <h4 class="card-title">User:</h4>
+    <p>Email: <%= @user.email %></p>
+    <a class="card-link"><%= link_to "Registration Settings", edit_user_registration_path %></a>
+  </div>
+</div>

@@ -1,17 +1,22 @@
 Rails.application.routes.draw do
-  get 'users/index'
+  # get 'users/index'
 
-  get 'users/new'
+  # get 'users/new'
 
-  get 'users/edit'
+  # get 'users/edit'
 
-  get 'users/show'
+  # get 'users/show'
 
   get 'homepage/index'
 
   # resources :training
 
   devise_for :users, :path => 'accounts'
+
+  # devise_for :users, controllers: {
+  #       sessions: 'users/sessions'
+  #     }
+
 
   resources :users do
     resources :training

@@ -8,6 +8,9 @@
         </li>
         <% if current_user %>
           <li class="nav-item">
+            <a><%= link_to "User Settings", user_path(current_user), class: "nav-link" %></a>
+          </li>
+          <li class="nav-item">
             <a><%= link_to "Log out", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?'}, class: "nav-link" %></a>
           </li>
           <% if current_user.admin? %>
