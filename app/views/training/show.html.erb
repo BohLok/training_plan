@@ -13,6 +13,6 @@
 
 </div>
 <div class="bottom-nav">
-  <span><%= link_to "Training List", user_training_index_path(user_id: current_user.id, start_date: @training.t_date), class: "btn btn-primary" %></span>
+  <span><%= link_to "Training List", user_training_index_path(user_id: current_user.id), class: "btn btn-primary" %></span>
   <span><%= link_to "Training Calender", user_t_plan_show_path(user_id: current_user.id, start_date: @training.t_date), class: "btn btn-secondary" %></span>
 </div>

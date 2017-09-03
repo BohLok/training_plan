@@ -1,11 +1,13 @@
 
-  <nav class="navbar navbar-expand-lg navbar-light main-container">
+  <nav class="navbar navbar-expand-lg navbar-light">
     <a><%= link_to "Traininplan", root_path, class: "navbar-brand" %></a>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
+   <!--  <div class="collapse navbar-collapse"> -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
           <a><%= link_to "Home", root_path, class: "nav-link" %> <span class="sr-only">(current)</span></a>
         </li>
+      </ul>
+      <ul class="navbar-nav"> 
         <% if current_user %>
           <li class="nav-item">
             <a><%= link_to "User Settings", user_path(current_user), class: "nav-link" %></a>
@@ -28,7 +30,7 @@
         <% end %>
       </ul>
     </div>
-  </nav>
+<!--   </nav> -->
   <div class="row align-items-start">
     <div class="col">
       <%= image_tag("header_img.png", class: "img_header") %>

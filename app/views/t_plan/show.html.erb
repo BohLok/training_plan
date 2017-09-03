@@ -11,7 +11,8 @@
         <% end %>
       <% end %>
     </p>
-    <!-- <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a> -->
+    <div class="bottom-nav">
+      <span><%= link_to "Training List", user_training_index_path(user_id: current_user.id), class: "btn btn-primary" %></span>
+  </div>
   </div>
 </div>
