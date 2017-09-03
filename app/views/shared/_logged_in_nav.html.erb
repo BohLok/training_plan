@@ -1,0 +1,6 @@
+<li class="nav-item">
+  <a><%= link_to "Logged in as: #{current_user.email}", user_path(current_user), class: "nav-link" %></a>
+</li>
+<li class="nav-item">
+  <a><%= link_to "Log out", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?'}, class: "nav-link" %></a>
+</li>
