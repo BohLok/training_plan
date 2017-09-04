@@ -10,6 +10,9 @@
           <% unless u == current_user %>
             <span class="badge badge-danger"><%= link_to "delete", user_path(u), method: :delete, class: "custom-link"  %></span>
           <% end %>
+          <% if current_user.admin? %>
+            <span class="badge badge-primary"><%= link_to "Show User Training", user_training_index_path(u), class: "custom-link"  %></span>
+          <% end %>
         </li>
       </ul>
     <% end %>

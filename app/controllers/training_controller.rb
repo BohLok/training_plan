@@ -1,13 +1,15 @@
 class TrainingController < ApplicationController
 before_action :authenticate_user!
-# before_action :set_training
+before_action :set_trainee
 
 def index
-  @trainings = current_user.trainings.order(:t_date).page params[:page]
+  @trainings = @trainee.trainings.order(:t_date).page params[:page]
+
+
 end
 
 def show
-  @training = Training.find(params[:id])
+  @training = @trainee.trainings.find(params[:id])
 end
 
 
@@ -50,5 +52,11 @@ private
   #   @training = Training.find(params[:id])
   # end
 
-
+  def set_trainee
+    if current_user.admin?
+      @trainee = User.find(params[:user_id])
+    else
+      @trainee = current_user
+    end
+  end
 end
