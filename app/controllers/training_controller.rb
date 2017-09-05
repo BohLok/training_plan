@@ -17,13 +17,13 @@ def new
   if !current_user.admin? then
     redirect_to root_path, alert: "Only for accessible for Admin!"
   end
-  @training = Training.new
+  @training = @trainee.trainings.build
 end
 
 def create
-  @training = Training.new(training_params)
+  @training = @trainee.trainings.build(training_params)
   if @training.save
-    redirect_to user_training_path(current_user, @training), alert: "Training successfully created!"
+    redirect_to user_training_path(@trainee, @training), alert: "Training successfully created!"
   else
     render "new", alert: "Training could not be saved!"
   end

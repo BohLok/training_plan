@@ -6,7 +6,7 @@
       <ul class="list-group">
         <li class="list-group-item">
           <span class="badge badge-primary"><%= t.t_date %></span>
-          <%= link_to t.title, user_training_path(current_user, t), class: "card-link" %>
+          <%= link_to t.title, user_training_path(@trainee, t), class: "card-link" %>
           
         </li>
       </ul>
@@ -16,4 +16,4 @@
 </div>
 </br>
 <%= paginate @trainings %>
-<div><%= link_to "Training Calender", user_t_plan_show_path(user_id: current_user.id), class: "btn btn-primary" %></div>
+<div><%= link_to "Training Calender", user_t_plan_show_path(user_id: @trainee.id), class: "btn btn-primary" %></div>

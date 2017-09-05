@@ -1,18 +1,18 @@
 <div class="card">
   <div class="card-body">
-    <h4 class="card-title">Trainingsplan for <%= current_user.email %></h4>
+    <h4 class="card-title">Trainingsplan for <%= @trainee.email %></h4>
     <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
     <p class="card-text">
       <%= month_calendar do |date| %>
         <% if (training = @trainings.detect {|t| t.t_date == date}) %>
-          <%= link_to(training.title, user_training_path(current_user, training), class: "page-link") %>
+          <%= link_to(training.title, user_training_path(@trainee, training), class: "page-link") %>
         <% else %>
           <%= date %>
         <% end %>
       <% end %>
     </p>
     <div class="bottom-nav">
-      <span><%= link_to "Training List", user_training_index_path(user_id: current_user.id), class: "btn btn-primary" %></span>
+      <span><%= link_to "Training List", user_training_index_path(user_id: @trainee.id), class: "btn btn-primary" %></span>
   </div>
   </div>
 </div>
