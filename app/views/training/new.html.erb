@@ -1,5 +1,6 @@
 training#new
 <%= form_for @training, url: {action: "create"} do |f| %>
+  <%= f.text_field :t_date, data:{ provide: 'datepicker'} %>
   <%= f.label :title %>
   <%= f.text_field :title %>
   <%= f.label :body %>
