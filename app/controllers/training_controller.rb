@@ -22,7 +22,7 @@ end
 
 def create
   @training = @trainee.trainings.build(training_params)
-  if @training.save
+  if @training.save!
     redirect_to user_training_path(@trainee, @training), alert: "Training successfully created!"
   else
     render "new", alert: "Training could not be saved!"
