@@ -7,8 +7,10 @@
         <li class="list-group-item">
           <span class="badge badge-primary"><%= t.t_date %></span>
           <%= link_to t.title, user_training_path(@trainee, t), class: "card-link" %>
-          
+          <%= link_to "Edit", edit_user_training_path(@trainee, t), class: "card-link" %>
+          <%= link_to "Delete", user_training_path(@trainee, t), method: :delete, class: "card-link" %>
         </li>
+
       </ul>
 
     <% end %>
