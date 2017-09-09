@@ -39,6 +39,15 @@ def edit
 end
 
 def update
+  @training = @trainee.trainings.find(params[:id])
+  if @training.update_attributes(training_params)
+    flash[:success] = "Successfully updated!"
+    redirect_to user_training_path(@trainee, @training)
+  else
+    flash.now[:error] = "Could not update!"
+
+    render "edit"
+  end
 end
 
 def destroy
