@@ -8,8 +8,12 @@
           <span class="badge badge-primary"><%= t.t_date %></span>
           <%= link_to t.title, user_training_path(@trainee, t), class: "card-link" %>
           <% if current_user.admin? %>
+          <span class="badge badge-warning">  
             <%= link_to "Edit", edit_user_training_path(@trainee, t), class: "card-link" %>
-            <%= link_to "Delete", user_training_path(@trainee, t), method: :delete, class: "card-link" %>
+          </span>
+          <span class="badge badge-danger">
+            <%= link_to "Delete", user_training_path(@trainee, t), method: :delete, class: "badge-link" %>
+          </span>
           <% end %>
         </li>
 
@@ -20,4 +24,7 @@
 </div>
 </br>
 <%= paginate @trainings %>
-<div><%= link_to "Training Calender", user_t_plan_show_path(user_id: @trainee.id), class: "btn btn-primary" %></div>
+<span><%= link_to "Training Calender", user_t_plan_show_path(user_id: @trainee.id), class: "btn btn-primary" %></span>
+<% if current_user.admin? %>
+  <span><%= link_to "Add Training", new_user_training_path(user_id: @trainee.id), class: "btn btn-success" %></span>
+<% end %>

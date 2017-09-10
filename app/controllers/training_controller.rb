@@ -17,7 +17,8 @@ def new
   if !current_user.admin? then
     redirect_to root_path, alert: "Only for accessible for Admin!"
   end
-  @training = @trainee.trainings.build
+  # @training = @trainee.trainings.build
+  @training = Training.new
 end
 
 def create

@@ -1,37 +1,4 @@
 <h4>New Training for <%= @trainee.email %>:</h4>
 <%= errors_for(@training) %>
+<%= render partial: 'training_form', locals: {action: 'update'} %>
 
-
-<%= form_for @training, url: {action: "update"} do |f| %>
-  <div class="form-group">
-    <%= f.label :t_date, 'Training Date:'%>
-    <%= f.date_select :t_date, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
-    <% if @training.errors[:title] %>
-      <% @training.errors.messages[:title].each do |em| %>
-        <%= f.label :title, em %>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="form-group">
-    <%= f.label :body, 'Training Description'%>
-    <%= f.text_area :body, size: "60x12", class: 'form-control' %>
-  <% if @training.errors[:body] %>
-      <% @training.errors.messages[:body].each do |em| %>
-        <%= f.label :body, em %>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="form-group">
-    <%= f.label :length %>
-    <%= f.text_field :length, size: "60x12", class: 'form-control' %>
-  </div>
-    <div class="form-group">
-    <%= f.label :difficulty %>
-    <%= f.select(:difficulty,[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], {}, {class: 'form-control'}) %>
-  </div>
-  <%= f.submit "Update", class: 'btn btn-primary' %>
-<% end %>
