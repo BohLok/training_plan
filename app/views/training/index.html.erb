@@ -9,7 +9,7 @@
           <%= link_to t.title, user_training_path(@trainee, t), class: "card-link" %>
           <% if current_user.admin? %>
           <span class="badge badge-warning">  
-            <%= link_to "Edit", edit_user_training_path(@trainee, t), class: "card-link" %>
+            <%= link_to "Edit", edit_user_training_path(@trainee, t), class: "badge-link" %>
           </span>
           <span class="badge badge-danger">
             <%= link_to "Delete", user_training_path(@trainee, t), method: :delete, class: "badge-link" %>
