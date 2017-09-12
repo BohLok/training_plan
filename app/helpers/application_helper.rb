@@ -51,4 +51,11 @@ def errors_for(object)
     end
 end
 
+def prev_monday(date_str)
+  date = Date.parse date_str
+  date - date.wday + 1
+end
+
+
+
 end

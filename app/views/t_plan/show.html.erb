@@ -12,9 +12,27 @@
         <% end %>
       <% end %>
     </p>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Trainingweek for <%= @trainee.email %></h4>
+    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+    <p class="card-text">
+      <%= week_calendar events: @trainings do |date, trainings| %>
+        <%= date %>
+        <% trainings.each do |training| %>
+          <div>
+            <%= link_to training.title, user_training_path(@trainee, training.id) %>
+          </div>
+        <% end %>
+      <% end %>
+      </p>
     <div class="bottom-nav">
       <span><%= link_to "Training List", user_training_index_path(user_id: @trainee.id), class: "btn btn-primary" %></span>
-  </div>
+    </div>
   </div>
 </div>
 
