@@ -1,19 +1,3 @@
-<div class="card">
-  <div class="card-body">
-    <h4 class="card-title">Trainingsplan for <%= @trainee.email %></h4>
-    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-    <p class="card-text">
-      <%= month_calendar events: @trainings do |date, trainings| %>
-        <%= date %>
-        <% trainings.each do |training| %>
-          <div>
-            <%= link_to training.title, user_training_path(@trainee, training.id) %>
-          </div>
-        <% end %>
-      <% end %>
-    </p>
-  </div>
-</div>
 
 
 <div class="card">

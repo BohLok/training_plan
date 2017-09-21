@@ -20,7 +20,8 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :training
-    get 't_plan/show'
+    get 't_plan/show_month'
+    get 't_plan/show_week'
   end
 
   

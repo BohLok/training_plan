@@ -14,5 +14,5 @@
 </div>
 <div class="bottom-nav">
   <span><%= link_to "Training List", user_training_index_path(user_id: @trainee.id), class: "btn btn-primary" %></span>
-  <span><%= link_to "Training Calender", user_t_plan_show_path(user_id: @trainee.id, start_date: @training.t_date), class: "btn btn-secondary" %></span>
+  <span><%= link_to "Training Calender", user_t_plan_show_month_path(user_id: @trainee.id, start_date: @training.t_date), class: "btn btn-secondary" %></span>
 </div>

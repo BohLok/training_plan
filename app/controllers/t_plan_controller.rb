@@ -1,7 +1,12 @@
 class TPlanController < ApplicationController
  before_action :authenticate_user!
  before_action :set_trainee
-  def show
+  
+  def show_month
+    @trainings = @trainee.trainings
+  end
+
+  def show_week
     @trainings = @trainee.trainings
   end
 
