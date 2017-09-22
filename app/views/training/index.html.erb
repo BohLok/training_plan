@@ -24,7 +24,7 @@
 </div>
 </br>
 <%= paginate @trainings %>
-<span><%= link_to "Training Calender", user_t_plan_show_month_path(user_id: @trainee.id), class: "btn btn-primary" %></span>
+<span><%= link_to "Training Calender", user_t_plan_show_month_path(user_id: @trainee.id, start_date: @start_date), class: "btn btn-primary" %></span>
 <% if current_user.admin? %>
   <span><%= link_to "Add Training", new_user_training_path(user_id: @trainee.id), class: "btn btn-success" %></span>
 <% end %>
