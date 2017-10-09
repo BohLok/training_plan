@@ -3,6 +3,7 @@
     <h4 class="card-title">Trainingsplan for <%= @trainee.email %></h4>
     <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
     <p class="card-text">
+      <!-- month_calendar events: @trainings, start_date: @start_date do |date, trainings| -->
       <%= month_calendar events: @trainings, start_date: @start_date do |date, trainings| %>
         <%= date %>
         <% trainings.each do |training| %>

@@ -21,10 +21,11 @@ private
   end
 
   def set_start_date
-    if !@start_date
-      @start_date = Date.today
+    if !params[:start_date]
+      
+      params[:start_date] = Date.today
     end
-    params[:start_date] = @start_date
+    @start_date = params[:start_date]
   end
 
 end
