@@ -22,7 +22,7 @@ class Training < ApplicationRecord
     trainee_trainings = self.where(user_id: trainee_id)
     
     date_monday = date_monday(date)
-    for d in date_monday..date_monday+7
+    for d in date_monday..date_monday+6
       if trainee_trainings.where(t_date: d)
 
         trainee_trainings.where(t_date: d).each do |t|

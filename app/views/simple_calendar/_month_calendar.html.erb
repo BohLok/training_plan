@@ -29,7 +29,8 @@
               <% end %>
             <% end %>
           <% end %>
-          <td><%= link_to "123", user_t_plan_show_week_path(@trainee) %></td>
+
+          <td><%= link_to Training.weeksum(week[0], @trainee.id), user_t_plan_show_week_path(@trainee, start_date: week[0]) %></td>
         </tr>
       <% end %>
     </tbody>
